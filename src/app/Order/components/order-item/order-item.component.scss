@@ -61,3 +61,52 @@ select {
 .join-waitlst {
     margin: 0;
 }
+
+.donate-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 10px 0;
+}
+
+.donate-amount-tag {
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+    padding: 3px 10px;
+    margin-right: 10px;
+}
+
+.tag-selected {
+    background: #7d7d7d;
+    color: white;
+}
+
+.donate-amount-input {
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #dddbda;
+    padding: 5px 10px;
+    margin-left: 0;
+    width: 90px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.currency-icon {
+    display: inline;
+    border-radius: 3px 0 0 3px;
+    max-height: 10px;
+    border: 1px solid #dddbda;
+    border-right: none;
+    padding: 3px 2px;
+    padding-bottom: 6px;
+    margin-right: 0;
+}
+
+.donate-amount-container {
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}

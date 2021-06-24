@@ -1,0 +1,63 @@
+section {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.item-name {
+    margin: auto 0;
+}
+
+.item-description {
+}
+
+.item-details {
+    margin-left: 30px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.item-quantity {
+    display: inline;
+    margin-left: 35px;
+}
+
+.item-qty-dropdown {
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+}
+
+// Hide the actual select and use custon styles to create it.
+select {
+    // background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_up.png) no-repeat right #ddd;
+    // -webkit-appearance: none;
+}
+
+.sale-text {
+    margin: 10px 0;
+    font-size: smaller;
+}
+
+.item-image {
+    height: 100%;
+}
+
+.waitlist {
+    margin: 18px auto;
+    border-radius: 3px;
+    background: #f0ebe4;
+    font-size: smaller;
+    padding: 10px;
+}
+
+.join-waitlist-text {
+    color: #0070d2;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.join-waitlst {
+    margin: 0;
+}

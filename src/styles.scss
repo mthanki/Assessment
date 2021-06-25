@@ -23,3 +23,18 @@ hr {
     border-left: transparent;
     border-right: transparent;
 }
+
+.form-input {
+    height: 24px;
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+}
+
+.form-input::placeholder {
+    padding-left: 8px;
+}
+
+.input-row {
+    // width: 100%;
+    margin: 10px 0;
+}

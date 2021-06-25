@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+.description {
+    margin-left: 30px;
+}
+
+.fill-later-text {
+    display: flex;
+    align-self: flex-end;
+    float: right;
+    color: #0070d2;
+    cursor: pointer;
+    font-size: smaller;
+    margin-left: 50px;
+}
+
+.fill-later-text:hover {
+    text-decoration: underline;
+    text-align: right;
+}
+
+.register-message {
+    font-size: smaller;
+}

@@ -1,0 +1,27 @@
+form {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.name-input-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.name-input-container > input {
+    width: 47%;
+    // margin: 0 20px;
+}
+
+.form-input {
+    height: 24px;
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+}
+
+.form-input::placeholder {
+    padding-left: 8px;
+}

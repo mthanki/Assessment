@@ -2,6 +2,7 @@ section {
     display: flex;
     flex-flow: column nowrap;
     border-radius: 2px;
+    min-width: 80px;
 }
 
 .header {
@@ -26,9 +27,20 @@ section {
 }
 
 .promo-text {
-    margin-top: 20px;
     color: #0070d2;
     cursor: pointer;
+}
+
+.items-list {
+    margin-bottom: 20px;
+}
+
+.edit-option {
+    font-size: smaller;
+}
+
+.line-element > .promo-text {
+    margin-top: 20px;
 }
 
 .promo-text:hover {

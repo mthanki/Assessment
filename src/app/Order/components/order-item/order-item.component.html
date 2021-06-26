@@ -1,38 +1,50 @@
-<section>
-    <div class="item-image">
-        <img src="assets/images/item-image.png" alt="">
-    </div>
-    <div class="item-details">
-        <h4 class="item-name">Free Ticket</h4>
-        <p class="item-description">Free ticket for anyone to make a valuable contribution towards our future online
-            events programme. Thank you.
-        </p>
-        <p class="sale-text">Sale ends in 1 hour</p>
-        <div class="donate-bar">
-            <span class="donate-amount-tag">$100</span>
-            <span class="donate-amount-tag tag-selected">$200</span>
-            <span class="donate-amount-tag">$300</span>
-            <span class="donate-amount-tag">$500</span>
-            <span class="donate-amount-continer">
-                <div class="currency-icon">$</div>
-                <input class="donate-amount-input" type="text" placeholder="Enter amount" />
-            </span>
+<div *ngIf="itemData">
+    <section>
+        <div *ngIf="itemData.imageUrl" class="item-details item-image">
+            <img [src]="itemData.imageUrl" alt="">
         </div>
-        <div class="price-section">
-            <span class="price">Free</span>
-            <div class="item-quantity">
-                <select class="item-qty-dropdown" name="quantity" id="item">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
+        <div class="item-details">
+            <h4 class="item-name">{{itemData.item.name}}</h4>
+            <p class="item-description">{{itemData.item.description}}</p>
+            <p [class.danger]="saleDangerClass" *ngIf="!itemData.isDonate && saleMessage" class="sale-text">
+                {{saleMessage}}</p>
+            <p *ngIf="itemData.isDonate" class="sale-text donate-text">I want to donate</p>
+
+            <div *ngIf="itemData.isDonate" class="donate-bar">
+                <span class="donate-amount-tag">$100</span>
+                <span class="donate-amount-tag tag-selected">$200</span>
+                <span class="donate-amount-tag">$300</span>
+                <span class="donate-amount-tag">$500</span>
+                <span class="donate-amount-continer">
+                    <div class="currency-icon">$</div>
+                    <input class="donate-amount-input" type="text" placeholder="Enter amount" />
+                </span>
+            </div>
+
+            <div *ngIf="!itemData.isDonate" class="price-section">
+                <span class="price">{{itemData.item.price | currency}}</span>
+                <div class="item-quantity">
+                    <select (change)="removeFromWaitelist()" [(ngModel)]="currentSelection" class="item-qty-dropdown"
+                        name="quantity" id="item">
+                        <option *ngFor="let q of quantity" [value]="q">{{q}}</option>
+                    </select>
+                </div>
             </div>
         </div>
+    </section>
+    <div class="item-details">
+        <div *ngIf="currentSelection > itemData.availableQuantity" class="waitlist">
+            <p *ngIf="!isJoinedWaitlist" class="join-waitlst">Only {{itemData.availableQuantity}} tickets available.
+                Want to join waitlist for
+                {{currentSelection - itemData.availableQuantity}} tickets? <span (click)="toggleWaitlistJoin()"
+                    class="join-waitlist-text">Join waitlist</span>
+            </p>
+            <p *ngIf="isJoinedWaitlist" class="join-waitlst">{{itemData.availableQuantity}} Tickets
+                Added to cart. Joined waitlist for
+                {{currentSelection - itemData.availableQuantity}} tickets. <span (click)="toggleWaitlistJoin()"
+                    class="join-waitlist-text">Cancel</span>
+            </p>
+        </div>
+        <hr *ngIf="!isLast" />
     </div>
-</section>
-<div class="waitlist">
-    <p class="join-waitlst">Only two tickets available. <span class="join-waitlist-text">Join waitlist</span>
-    </p>
 </div>
-<hr />

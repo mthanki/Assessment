@@ -14,6 +14,7 @@ import { OrderStatusComponent } from './Order/components/order-status/order-stat
 import { TicketFormContainerComponent } from './Order/components/ticket-form-container/ticket-form-container.component';
 import { CustomerInfoEditorComponent } from './Order/components/customer-info-editor/customer-info-editor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

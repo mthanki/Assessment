@@ -3,6 +3,10 @@ section {
     flex-flow: row nowrap;
 }
 
+hr {
+    margin: 24px 0;
+}
+
 .item-name {
     margin: auto 0;
 }
@@ -40,6 +44,10 @@ select {
     font-size: smaller;
 }
 
+.donate-text {
+    font-weight: bold;
+}
+
 .item-image {
     height: 100%;
 }
@@ -73,6 +81,7 @@ select {
     border: 1px solid #dddbda;
     padding: 3px 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .tag-selected {
@@ -109,4 +118,8 @@ input::placeholder {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+}
+
+.danger {
+    color: #eb7092;
 }

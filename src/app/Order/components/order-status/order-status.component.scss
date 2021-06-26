@@ -1,0 +1,51 @@
+hr {
+    width: 90%;
+    margin-top: -10px;
+}
+
+.main-container {
+    width: 95%;
+    display: flex;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.dot {
+    margin: auto;
+    height: 8px;
+    width: 8px;
+    border: 3px solid white;
+    background: darkgray;
+    border-radius: 15px;
+}
+
+.active {
+    background: #0eb58a;
+}
+
+.dot-circle {
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 15px;
+    height: 20px;
+    width: 20px;
+    background: darkgray;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+span {
+    padding-top: 3px;
+    font-size: smaller;
+    color: gray;
+}
+
+.labels-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}

@@ -1,0 +1,30 @@
+<section class="card">
+    <h4 class="header">Order summary</h4>
+    <section class="items-list">
+        <div *ngFor="let item of orderData[0].orderItems" [class.waitlisted]="item.isWaitlisted" class="line-element">
+            <span>{{item.quantity}} {{item.name}}</span> <span class="element-right">{{item.price | currency}}</span>
+        </div>
+        <span *ngIf="isEditable" class="promo-text edit-option">Edit</span>
+    </section>
+    <hr />
+    <div>
+        <div class="line-element payable">
+            <span>Subtotal</span> <span class="element-right">{{subTotal | currency}}</span>
+        </div>
+        <div class="line-element payable">
+            <span>Taxes</span> <span class="element-right">{{taxAmount | currency}}</span>
+        </div>
+    </div>
+    <hr />
+    <div class="line-element payable total">
+        <span>Total</span> <span class="element-right">{{total | currency}}</span>
+    </div>
+    <div *ngIf="!shouldShowPromoField" (click)="showPromoCodeInput()" class="line-element">
+        <span class="promo-text">Have a promo code?</span>
+    </div>
+    <div *ngIf="shouldShowPromoField" class="line-element">
+        <input placeholder="Promo Code" class="promo-input" type="text" />
+        <button class="promo-button">Apply</button>
+    </div>
+</section>
+<button routerLink="/checkout" class="checkout-button">{{buttonText}}</button>

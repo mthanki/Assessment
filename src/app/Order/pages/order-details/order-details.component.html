@@ -1,0 +1,5 @@
+<section>
+    <app-order-items-container (ticketSelectionChanged)="updateOrderSummary($event)"></app-order-items-container>
+    <app-order-summary [orderData]="orderService.data" [isEditable]="isEditable" [buttonText]="buttonText">
+    </app-order-summary>
+</section>

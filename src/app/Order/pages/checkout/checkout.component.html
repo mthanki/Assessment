@@ -1,0 +1,13 @@
+<section>
+    <div class="ticket-section">
+        <app-order-status></app-order-status>
+        <app-ticket-info></app-ticket-info>
+        <app-ticket-form-container></app-ticket-form-container>
+        <app-ticket-form-container></app-ticket-form-container>
+        <app-ticket-form-container></app-ticket-form-container>
+
+    </div>
+    <!-- <app-order-items-container></app-order-items-container> -->
+    <app-order-summary [orderData]="orderService.data" [isEditable]="isEditable" [buttonText]="buttonText">
+    </app-order-summary>
+</section>

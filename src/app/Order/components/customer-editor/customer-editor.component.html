@@ -1,0 +1,12 @@
+<form [formGroup]="customerForm" action="">
+    <app-customer-info-editor></app-customer-info-editor>
+    <input placeholder="Job Title" class="form-input input-row" type="text" />
+    <input placeholder="Company" class="form-input input-row" type="text" />
+    <select class="form-input" name="Country" id="country">
+        <option value="volvo">Country</option>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+</form>

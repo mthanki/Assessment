@@ -1,0 +1,49 @@
+<div *ngIf="itemData">
+    <section>
+        <div *ngIf="itemData.imageUrl" class="item-details item-image">
+            <img [src]="itemData.imageUrl" alt="">
+        </div>
+        <div class="item-details">
+            <h4 class="item-name">{{itemData.item.name}}</h4>
+            <p class="item-description">{{itemData.item.description}}</p>
+            <p [class.danger]="saleDangerClass" *ngIf="!itemData.isDonate && saleMessage" class="sale-text">
+                {{saleMessage}}</p>
+            <p *ngIf="itemData.isDonate" class="sale-text donate-text">I want to donate</p>
+
+            <div *ngIf="itemData.isDonate" class="donate-bar">
+                <span (click)="selectDonateAmount(option)" [class.tag-selected]="donationAmountSelected == option"
+                    *ngFor="let option of donateOptions" class="donate-amount-tag">{{option | currency
+                    :'USD':'symbol':'1.0-1'}}</span>
+                <span class="donate-amount-continer">
+                    <div class="currency-icon">$</div>
+                    <input class="donate-amount-input" type="text" placeholder="Enter amount" />
+                </span>
+            </div>
+
+            <div *ngIf="!itemData.isDonate" class="price-section">
+                <span class="price">{{itemData.item.price | currency}}</span>
+                <div class="item-quantity">
+                    <select (change)="propogateChange()" [(ngModel)]="currentSelection" class="item-qty-dropdown"
+                        name="quantity" id="item">
+                        <option *ngFor="let q of quantity" [value]="q">{{q}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="item-details">
+        <div *ngIf="currentSelection > itemData.availableQuantity" class="waitlist">
+            <p *ngIf="!isJoinedWaitlist" class="join-waitlst">Only {{itemData.availableQuantity}} tickets available.
+                Want to join waitlist for
+                {{currentSelection - itemData.availableQuantity}} tickets? <span (click)="toggleWaitlistJoin()"
+                    class="join-waitlist-text">Join waitlist</span>
+            </p>
+            <p *ngIf="isJoinedWaitlist" class="join-waitlst">{{itemData.availableQuantity}} Tickets
+                Added to cart. Joined waitlist for
+                {{currentSelection - itemData.availableQuantity}} tickets. <span (click)="toggleWaitlistJoin()"
+                    class="join-waitlist-text">Cancel</span>
+            </p>
+        </div>
+        <hr *ngIf="!isLast" />
+    </div>
+</div>

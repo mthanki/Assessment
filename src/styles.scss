@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+    background-color: #e5e5e5;
+    font-family: sans-serif;
+}
+
+.card {
+    padding: 20px 30px;
+    box-shadow: 0px 0px 2px 1px #bebebe;
+    background-color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+hr {
+    height: 0px;
+    width: 100%;
+    border-top: 2px solid #dddbda;
+    border-bottom: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.form-input {
+    height: 24px;
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+}
+
+.form-input::placeholder {
+    padding-left: 8px;
+}
+
+.input-row {
+    // width: 100%;
+    margin: 10px 0;
+}

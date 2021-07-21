@@ -1,0 +1,133 @@
+section {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+hr {
+    margin: 24px 0;
+}
+
+.item-name {
+    margin: auto 0;
+}
+
+.item-description {
+}
+
+.item-details {
+    margin-left: 30px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.item-quantity {
+    display: inline;
+    margin-left: 35px;
+}
+
+.item-qty-dropdown {
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+}
+
+// Hide the actual select and use custon styles to create it.
+select {
+    // background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_up.png) no-repeat right #ddd;
+    // -webkit-appearance: none;
+}
+
+.sale-text {
+    margin: 10px 0;
+    font-size: smaller;
+}
+
+.donate-text {
+    font-weight: bold;
+}
+
+.item-image {
+    height: 100%;
+}
+
+.waitlist {
+    margin: 18px auto;
+    border-radius: 3px;
+    background: #f0ebe4;
+    font-size: smaller;
+    padding: 10px;
+}
+
+.join-waitlist-text {
+    color: #0070d2;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.join-waitlst {
+    margin: 0;
+}
+
+.donate-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 10px 0;
+}
+
+.donate-amount-tag {
+    border-radius: 3px;
+    border: 1px solid #dddbda;
+    padding: 3px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tag-selected {
+    background: #7d7d7d;
+    color: white;
+}
+
+.donate-amount-input {
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #dddbda;
+    padding: 5px 10px;
+    margin-left: 0;
+    width: 90px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.currency-icon {
+    display: inline;
+    border-radius: 3px 0 0 3px;
+    max-height: 10px;
+    border: 1px solid #dddbda;
+    border-right: none;
+    padding: 3px 2px;
+    padding-bottom: 6px;
+    margin-right: 0;
+}
+
+.donate-amount-container {
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.danger {
+    color: #eb7092;
+}
+
+select {
+    overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+}

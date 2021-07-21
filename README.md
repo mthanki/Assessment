@@ -1,5 +1,5 @@
 # Screenshots
-![](https://ibb.co/P4hQR6t)
+![](https://ibb.co/P4hQR6t?raw=true)
 
 
 # Tickets

@@ -1,7 +1,7 @@
 # Screenshots
 ![Order Info](https://imgur.com/dnYN8Bb.png)
 
-
+![Checkout page](https://imgur.com/ob8bgev.png)
 # Tickets
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.

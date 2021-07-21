@@ -1,5 +1,5 @@
-import { DatePipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { OrderItem } from '../../Models/orderItem.model';
 
 @Component({
   selector: 'app-order-item',
@@ -9,13 +9,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class OrderItemComponent implements OnInit {
   @Input() itemData;
   @Input() isLast;
+  @Output() ticketSelectionChanged: EventEmitter<OrderItem> = new EventEmitter<OrderItem>();
+
   quantity = [];
   currentSelection = 1;
   isJoinedWaitlist = false;
   saleMessage;
   saleDangerClass = false;
 
-  constructor(private datePipe: DatePipe) { }
+  donateOptions = [50, 100, 200, 500];
+  donationAmountSelected = 0;
+
+  constructor() { }
 
   ngOnInit(): void {
     this.populateQuantityArray();
@@ -34,8 +39,9 @@ export class OrderItemComponent implements OnInit {
     this.isJoinedWaitlist = !this.isJoinedWaitlist;
   }
 
-  removeFromWaitelist() {
+  propogateChange() {
     this.isJoinedWaitlist = false;
+    this.ticketSelectionChanged.emit({ ...this.itemData.item, quantity: this.currentSelection });
   }
 
   getSaleMessage(saleEndDate: Date): string {
@@ -68,5 +74,9 @@ export class OrderItemComponent implements OnInit {
       return saleMessage = `Sale ends in ${days} days.`;
     }
     return "";
+  }
+
+  selectDonateAmount(amount) {
+    this.donationAmountSelected = amount;
   }
 }

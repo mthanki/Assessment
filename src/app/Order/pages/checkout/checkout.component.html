@@ -8,5 +8,6 @@
 
     </div>
     <!-- <app-order-items-container></app-order-items-container> -->
-    <app-order-summary></app-order-summary>
+    <app-order-summary [orderData]="orderService.data" [isEditable]="isEditable" [buttonText]="buttonText">
+    </app-order-summary>
 </section>

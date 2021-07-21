@@ -1,6 +1,4 @@
 <section class="card">
-    <app-order-item *ngFor="let item of data; last as last" [isLast]="last" [itemData]="item"></app-order-item>
-    <!-- <app-order-item></app-order-item>
-    <app-order-item></app-order-item>
-    <app-order-item></app-order-item> -->
+    <app-order-item (ticketSelectionChanged)="propoateChange($event)" *ngFor="let item of data; last as last"
+        [isLast]="last" [itemData]="item"></app-order-item>
 </section>

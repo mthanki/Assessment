@@ -4,12 +4,6 @@
         <div *ngFor="let item of orderData[0].orderItems" [class.waitlisted]="item.isWaitlisted" class="line-element">
             <span>{{item.quantity}} {{item.name}}</span> <span class="element-right">{{item.price | currency}}</span>
         </div>
-        <div class="line-element">
-            <span>2x Alumni Ticket</span> <span class="element-right">$3500.00</span>
-        </div>
-        <div class="line-element waitlisted">
-            <span>2x Alumni Ticket</span> <span class="element-right">$3500.00</span>
-        </div>
         <span *ngIf="isEditable" class="promo-text edit-option">Edit</span>
     </section>
     <hr />
@@ -29,7 +23,7 @@
         <span class="promo-text">Have a promo code?</span>
     </div>
     <div *ngIf="shouldShowPromoField" class="line-element">
-        <input placeholder="Promo Code" type="text" />
+        <input placeholder="Promo Code" class="promo-input" type="text" />
         <button class="promo-button">Apply</button>
     </div>
 </section>

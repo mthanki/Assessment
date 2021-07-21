@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { OrderItem } from '../../Models/orderItem.model';
 
 @Component({
@@ -7,6 +7,8 @@ import { OrderItem } from '../../Models/orderItem.model';
   styleUrls: ['./order-items-container.component.scss']
 })
 export class OrderItemsContainerComponent implements OnInit {
+  @Output() ticketSelectionChanged: EventEmitter<OrderItem> = new EventEmitter<OrderItem>();
+
   saleEndDateInHours = new Date();
   saleEndDateInDays = new Date();
   data = [
@@ -54,6 +56,10 @@ export class OrderItemsContainerComponent implements OnInit {
   ngOnInit(): void {
     this.saleEndDateInHours.setHours(this.saleEndDateInHours.getHours() + 5);
     this.saleEndDateInDays.setDate(this.saleEndDateInDays.getDate() + 5);
+  }
+
+  propoateChange(itemsSelection): void {
+    this.ticketSelectionChanged.emit(itemsSelection);
   }
 
 }

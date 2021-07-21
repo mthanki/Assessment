@@ -11,10 +11,9 @@
             <p *ngIf="itemData.isDonate" class="sale-text donate-text">I want to donate</p>
 
             <div *ngIf="itemData.isDonate" class="donate-bar">
-                <span class="donate-amount-tag">$100</span>
-                <span class="donate-amount-tag tag-selected">$200</span>
-                <span class="donate-amount-tag">$300</span>
-                <span class="donate-amount-tag">$500</span>
+                <span (click)="selectDonateAmount(option)" [class.tag-selected]="donationAmountSelected == option"
+                    *ngFor="let option of donateOptions" class="donate-amount-tag">{{option | currency
+                    :'USD':'symbol':'1.0-1'}}</span>
                 <span class="donate-amount-continer">
                     <div class="currency-icon">$</div>
                     <input class="donate-amount-input" type="text" placeholder="Enter amount" />
@@ -24,7 +23,7 @@
             <div *ngIf="!itemData.isDonate" class="price-section">
                 <span class="price">{{itemData.item.price | currency}}</span>
                 <div class="item-quantity">
-                    <select (change)="removeFromWaitelist()" [(ngModel)]="currentSelection" class="item-qty-dropdown"
+                    <select (change)="propogateChange()" [(ngModel)]="currentSelection" class="item-qty-dropdown"
                         name="quantity" id="item">
                         <option *ngFor="let q of quantity" [value]="q">{{q}}</option>
                     </select>

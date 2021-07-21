@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
+  isEditable = true;
+  buttonText = "Review Sessions";
 
-  constructor() { }
+  constructor(public orderService: OrderService) { }
 
   ngOnInit(): void {
   }

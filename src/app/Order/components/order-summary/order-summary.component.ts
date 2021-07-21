@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-order-summary',
   templateUrl: './order-summary.component.html',
   styleUrls: ['./order-summary.component.scss']
 })
-export class OrderSummaryComponent implements OnInit {
+export class OrderSummaryComponent implements OnInit, OnChanges {
   shouldShowPromoField = false;
   @Input() orderData;
   @Input() buttonText: string = "Checkout";
@@ -19,16 +19,15 @@ export class OrderSummaryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(typeof (this.orderData[0].orderItems));
-    // console.log((this.orderData));
+  }
 
+  ngOnChanges(): void {
     this.orderData[0].orderItems.forEach(i => { this.subTotal += this.getTotalItemAmount(i) });
     this.taxAmount = this.orderData[0].taxAmount;
     this.total = this.subTotal + this.taxAmount;
   }
 
   getTotalItemAmount(item) {
-    // console.log(item.price * item.quantity, item)
     return item.price * item.quantity;
   }
 
@@ -36,7 +35,7 @@ export class OrderSummaryComponent implements OnInit {
     this.shouldShowPromoField = true;
   }
 
-  appluPromoCode(): void {
+  applyPromoCode(): void {
     // Call api service to check validity
   }
 

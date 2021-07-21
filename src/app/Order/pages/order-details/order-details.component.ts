@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../order.service';
 
 @Component({
   selector: 'app-order-details',
@@ -11,7 +12,7 @@ export class OrderDetailsComponent implements OnInit {
       orderItems: [
         {
           quantity: 1,
-          name: "Free Ticker",
+          name: "Free Ticket",
           price: 0,
           isWaitlisted: false,
         },
@@ -19,6 +20,16 @@ export class OrderDetailsComponent implements OnInit {
           quantity: 2,
           name: "Alumni VIP Ticket",
           price: 3500.00,
+        },
+        {
+          quantity: 2,
+          name: "Alumni Base Ticket",
+          price: 95.99,
+        },
+        {
+          quantity: 5,
+          name: "Book: Good Strategy - Bad Strategy",
+          price: 17.99
         }
       ],
       taxAmount: 289.42
@@ -28,9 +39,14 @@ export class OrderDetailsComponent implements OnInit {
   buttonText: string = "Checkout";
   isEditable: boolean = false;
 
-  constructor() { }
+  constructor(public orderService: OrderService) { }
 
   ngOnInit(): void {
+  }
+
+  updateOrderSummary(ticketData) {
+    let itemIndex = this.orderService.data[0].orderItems.findIndex(item => item.name === ticketData.name);
+    this.orderService.data[0].orderItems[itemIndex].quantity = ticketData.quantity;
   }
 
 }

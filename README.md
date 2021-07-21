@@ -1,5 +1,5 @@
 # Screenshots
-![](https://imgur.com/ob8bgev)
+![](https://ibb.co/P4hQR6t)
 
 
 # Tickets
